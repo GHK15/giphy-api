@@ -15,14 +15,20 @@ var fruits = ["strawberry", "watermelon", "lemon", "pineapple"];
         var fruitDiv = $("<div class='fruit jumbotron mx-auto'>");
         var rtDiv = $('<div>');
         var ratings = response.data[i].rating;
-        var pOne = $("<h2 class='text-center'>").text("Rated: " + ratings);
+        var pOne = $("<h2 class='text-center'>").text("Rated: " + capitalizeRating(ratings));
         rtDiv.append(pOne);
+
+        function capitalizeRating(string) {
+            // return string.charAt(0).toUpperCase() + string.slice(0);
+            return string.toUpperCase();
+        }
+
 
         var imgUrl = response.data[i].images.fixed_height_still.url;
         var moveUrl = response.data[i].images.fixed_height.url;
 
         var image = $("<img class='img-responsive mx-auto gif' style='display:block'>").attr("src", imgUrl);
-        image.attr("data-state", "");
+        image.attr("data-state", "still");
         image.attr("alt", "fruit gif");
         image.attr("data-still", imgUrl);
         image.attr("data-animate", moveUrl);
@@ -32,19 +38,7 @@ var fruits = ["strawberry", "watermelon", "lemon", "pineapple"];
 
         $("#fruits-view").prepend(fruitDiv);
 
-        $(".gif").on("click", function() {
-            var state = $(this).attr("data-state");
-
-            if (state === "still") {
-                $(this).attr("src", $(this).attr("data-animate"));
-                $(this).attr("data-state", "animate");
-                console.log("it was still");
-            } else {
-                $(this).attr("src", $(this).attr("data-still"));
-                $(this).attr("data-state", "still");
-                console.log("it was animated")
-            }
-        });
+        
         
         }
 
@@ -52,6 +46,20 @@ var fruits = ["strawberry", "watermelon", "lemon", "pineapple"];
 
     }
 
+
+    $(document).on("click",".gif", function() {
+        var state = $(this).attr("data-state");
+
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+            console.log("it was still");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+            console.log("it was animated")
+        }
+    });
 
     function renderButtons() {
 

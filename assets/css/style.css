@@ -6,13 +6,58 @@ input {
 }
 
 h1 {
-    text-align: center;
+    font-weight: bold!important;
+}
+
+h2 {
+    font-weight: bold!important;
+    color: white!important;
+}
+
+.topbar {
+    background-color: rgba(218, 165, 32, 0.5)!important;
 }
 
 body {
     margin: 20px;
+    font-family: 'Courier New', Courier, monospace!important;
+    background-color: rgba(218, 165, 32, 0)!important;
+}
+
+html {
+    height: 100%;
+    background: url("../images/background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 p {
     font-size: 20px;
+}
+
+.fluid-container {
+    text-align: center;
+}
+
+#buttons-view {
+    margin-bottom: 40px;
+}
+
+#add-fruit {
+    padding: 2px;
+    font-size: 12px;
+}
+
+.fruit-btn {
+    padding: 4px!important;
+}
+
+#fruit-form {
+    font-size: 13px;
+}
+
+.fruit {
+    background-color: rgba(32, 91, 218, 0.3)!important;
 }

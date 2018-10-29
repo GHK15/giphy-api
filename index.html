@@ -10,14 +10,19 @@
 
 <body>
     <div class="fluid-container">
+      <div class="topbar">
       <h1>Fruit Search</h1>
+      <p>Add a fruit or click an existing fruit button to get related gifs! You can click on a gif to animate or stop it. </p>
+      </div>
+      <br><br>
       <div id="buttons-view"></div>
       <form id="fruit-form">
-        <label for="fruit-input">Add a Fruit</label>
-        <input type="text" id="fruit-input">
-        <br>
-        <input class="btn btn-info" id="add-fruit" type="submit" value="Add a Fruit">
+        <!-- <label for="fruit-input">Add a Fruit</label> -->
+        <input type="text" id="fruit-input" placeholder="mango">
+        <!-- <br> -->
+        <input class="btn btn-info" id="add-fruit" type="submit" value="Add Fruit">
       </form>
+      <br>
       <div class="container" id="fruits-view"></div>
     </div>
 
